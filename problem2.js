@@ -1,5 +1,3 @@
-// Problem-02 : Clean & Capitalize Characters
-
 function onlyCharacter(str) {
   if (typeof str !== "string") {
     return "Invalid";
@@ -7,11 +5,13 @@ function onlyCharacter(str) {
 
   let newStr = "";
 
-  for (let i = 0; i < str.length - 1; i++) {
-    newStr = newStr.trim().toUpperCase() + str[i];
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+
+    if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+      newStr += char;
+    }
   }
 
-  return newStr;
+  return newStr.trim().toUpperCase();
 }
-
-console.log(onlyCharacter(true));
