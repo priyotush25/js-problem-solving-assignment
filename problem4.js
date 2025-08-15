@@ -7,15 +7,11 @@ function isSame(arr1, arr2) {
     return false;
   }
 
-  for (let x of arr1) {
-    for (let i of arr2) {
-      if (arr1[x] === arr2[i]) {
-        return true;
-      } else {
-        return false;
-      }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
     }
   }
-}
 
-console.log(isSame([2, 5, 6], 256));
+  return true;
+}
