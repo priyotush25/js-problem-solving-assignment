@@ -10,7 +10,7 @@ function resultReport(marks) {
   let totalSubjects = marks.length;
 
   for (let mark of marks) {
-    totalMarks = totalMarks + mark;
+    totalMarks += mark;
 
     if (mark > 40) {
       pass++;
@@ -19,15 +19,11 @@ function resultReport(marks) {
     }
   }
 
-  finalScore = Math.round(totalMarks / totalSubjects);
+  if (totalSubjects > 0) {
+    finalScore = Math.round(totalMarks / totalSubjects);
+  } else {
+    finalScore = 0;
+  }
 
-  let result = {
-    finalScore: finalScore,
-    pass: pass,
-    fail: fail,
-  };
-
-  return result;
+  return { finalScore, pass, fail };
 }
-
-console.log(resultReport(100));
